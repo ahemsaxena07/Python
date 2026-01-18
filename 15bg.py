@@ -24,4 +24,5 @@ dictn = {
         'grade': 'semi-skilled',
     }
 }
-print(list(filter(lambda n: n == ['grades']['highly-skilled'], dictn.items())))
+
+print(list(filter(lambda n: n[1]['grade'] == 'highly-skilled', dictn.items())))
