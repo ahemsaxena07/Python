@@ -162,3 +162,36 @@ b = base()
 b.func()
 d = derived()
 d.func()
+
+
+#prob 20.3
+
+from abc import ABC, abstractmethod
+class printer(ABC):
+    def __init__(self, n):
+        self.__name = n
+
+    @abstractmethod
+    def print(self, docname):
+        pass
+
+class laserprinter(printer):
+    def __init__(self, n):
+        super().__init__(n)
+
+    def print(self, docname):
+        print(">>laserprinter.print")
+        print("truing to print:", docname)
+
+class inkjetprinter(printer):
+    def __init__(self, n):
+        super().__init__(n)
+
+    def print(self, docname):
+        print(">>inkjetprint.print")
+        print("trying to print:", docname)
+
+p = laserprinter("ahem 219")
+p.print("hellow3000")
+p2 = inkjetprinter("Ibm 343")
+p2.print("hellow3443")
